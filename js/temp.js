@@ -1,0 +1,153 @@
+// 文本框 
+var wenben =
+    '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+    '<p class="mid-li-title">文本框' +
+    '<span>*</span>' +
+    '</p>' +
+    '<p class="mid-li-desc">这是文本描述</p>' +
+    '<input type="text" disabled="disabled">',
+    // 文本框编辑
+    wenbenEdit =
+        '<div class="r-title">' +
+        '<p class="r-title-p">文本框</p>' +
+        '</div>' +
+        '<div class="r-type">' +
+        '<p><span class="r-type-key">组件类型</span><span class="r-type-value">单行文本</span></p>' +
+        '</div>' +
+        '<div class="r-list r-name">' +
+        '<p>标题</p>' +
+        '<input type="text" placeholder="文本框">' +
+        '</div>' +
+        '<div class="r-list r-name">' +
+        '<p>描述</p>' +
+        '<input type="text" placeholder="这是描述">' +
+        '</div>' +
+        '<div class="r-list r-must">' +
+        '<input type="checkbox">' +
+        '<span>这是必填项</span>' +
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>外观样式</p>' +
+        '</div>',
+
+    // 选择框
+    choose =
+        '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+        '<p class="mid-li-title">选择框<span>*</span></p>' +
+        '<p class="mid-li-desc">这是选择描述</p>' +
+        '<div>' +
+        '<input type="radio" disabled="disabled">' +
+        '<span>选项1</span>' +
+        '</div>' +
+        '<div>' +
+        '<input type="radio" disabled="disabled">' +
+        '<span>选项2</span>' +
+        '</div>' +
+        '<div>' +
+        '<input type="radio" disabled="disabled">' +
+        '<span>选项3</span>' +
+        '</div>',
+    chooseEdit =
+        '<div class="r-title">' +
+        '<p class="r-title-p">单选</p>' +
+        '</div>' +
+        '<div class="r-type">' +
+        '<p>' +
+        '<span class="r-type-key">组件类型</span>' +
+        '<span class="r-type-value">单选</span>' +
+        '</p>' +
+        '</div>' +
+        '<div class="r-list r-name">' +
+        '<p>标题</p>' +
+        '<input type="text" placeholder="文本框">' +
+        '</div>' +
+        '<div class="r-list r-name">' +
+        '<p>描述</p>' +
+        '<input type="text" placeholder="这是描述">' +
+        '</div>' +
+        '<div class="r-list r-must">' +
+        '<input type="checkbox">' +
+        '<span>这是必填项</span>' +
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>选项内容</p>' +
+        '<div>' +
+        '<div class="r-list-item">' +
+        '<input type="radio">' +
+        '<input type="text" placeholder="选项1">' +
+        '</div>' +
+        '<div class="r-list-item">' +
+        '<input type="radio">' +
+        '<input type="text" placeholder="选项1">' +
+        '</div>' +
+        '<div class="r-list-item">' +
+        '<input type="radio">' +
+        '<input type="text" placeholder="选项1">' +
+        '</div>' +
+        '</div>' +
+        '<div class="r-list-btn">' +
+        '<button>添加选项</button>' +
+        '</div>' +
+
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>外观样式</p>' +
+        '</div>',
+    //下拉框
+    downpull =
+        '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+        '<p class="mid-li-title">下拉框<span>*</span></p>' +
+        '<p class="mid-li-desc">这是下拉描述</p>' +
+        '<select  disabled="disabled"></select>',
+    downpullEdit =
+    '<div class="r-title">'+
+    '<p class="r-title-p">单选</p>'+
+    '</div>'+
+    '<div class="r-type">'+
+    '<p>'+
+        '<span class="r-type-key">组件类型</span>'+
+        '<span class="r-type-value">单选</span>'+
+    '</p>'+
+        '</div>'+
+    '<div class="r-list r-name">'+
+    '<p>标题</p>'+
+    '<input type="text" placeholder="文本框">'+
+    '</div>'+
+    '<div class="r-list r-name">'+
+    '<p>描述</p>'+
+    '<input type="text" placeholder="这是描述">'+
+    '</div>'+
+    '<div class="r-list r-must">'+
+    '<input type="checkbox">'+
+    '<span>这是必填项</span>'+
+    '</div>'+
+    '<div class="r-list">'+
+    '<p>选项内容</p>'+
+    '<div>'+
+        '<div class="r-list-item">'+
+            '<input type="radio">'+
+            '<input type="text" placeholder="选项1">'+
+        '</div>'+
+        '<div class="r-list-item">'+
+            '<input type="radio">'+
+            '<input type="text" placeholder="选项1">'+
+        '</div>'+
+        '<div class="r-list-item">'+
+            '<input type="radio">'+
+            '<input type="text" placeholder="选项1">'+
+        '</div>'+
+    '</div>'+
+    '<div class="r-list-btn">'+
+        '<button>添加选项</button>'+
+    '</div>'+
+
+    '</div>'+
+    '<div class="r-list">'+
+    '<p>外观样式</p>'+
+    '</div>',
+    //时间日期框
+    datetime =
+        '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+        '<p class="mid-li-title">下拉框<span>*</span></p>' +
+        '<p class="mid-li-desc">这是下拉描述</p>' +
+        '<input type="date" disabled="disabled"> '           

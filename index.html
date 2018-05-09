@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建表单</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/form.css">
+</head>
+
+<body>
+
+    <div class="wrapper w">
+        <!-- 左侧组件栏 -->
+        <div class="w-item w-left">
+            <div class="l-component">
+                <h4>基础类组件</h4>
+                <ul class="l-ul">
+                    <li class="l-ul-li" data-id="1">文本框</li>
+                    <li class="l-ul-li" data-id="2">选择</li>
+                    <li class="l-ul-li" data-id="3">下拉</li>
+                    <li class="l-ul-li" data-id="4">日期时间</li>
+                    <li class="l-ul-li" data-id="5">数字</li>
+                    <li class="l-ul-li" data-id="6">评分</li>
+                    <li class="l-ul-li" data-id="7">城市</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 中间表单栏 -->
+        <div class="w-item w-mid">
+            <div class="mid-main">
+                <div class="mid-main-title">
+                    <p class="mid-main-title-one">新建表单</p>
+                    <p class="mid-main-title-two">
+                        <!-- sdafsdasadfasdfasdfasdfasdfasdfsdafas -->
+                    </p>
+                </div>
+
+                <ul id="mid-ul" class="mid-ul">
+                    <!-- 文本框 模板-->
+                    <!-- <li class="mid-li mid-wenben">
+                        <span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>
+                        <p class="mid-li-title">文本框
+                            <span>*</span>
+                        </p>
+                        <p class="mid-li-desc">这是文本描述</p>
+                        <input type="text" disabled="disabled">
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- 右侧参数栏 -->
+        <div class="w-item w-right">
+            <div class="r-header">
+                <p class="r-header-p">编辑表单</p>
+            </div>
+            <!-- 文本框 编辑模板 -->
+
+            
+            <!-- <div class="r-tab" id="r-tab"> -->
+                <!-- <div class="r-title">
+                    <p class="r-title-p">文本框</p>
+                </div>
+                <div class="r-type">
+                    <p>
+                        <span class="r-type-key">组件类型</span>
+                        <span class="r-type-value">单行文本</span>
+                    </p>
+                </div>
+                <div class="r-list r-name">
+                    <p>标题</p>
+                    <input type="text" placeholder="文本框">
+                </div>
+                <div class="r-list r-name">
+                    <p>描述</p>
+                    <input type="text" placeholder="这是描述">
+                </div>
+                <div class="r-list r-must">
+                    <input type="checkbox">
+                    <span>这是必填项</span>
+                </div>
+                <div class="r-list">
+                    <p>外观样式</p>
+                </div> -->
+            <!-- </div> -->
+
+
+
+
+
+
+            <!-- 选择编辑模板 -->
+            <div class="r-tab" id="r-tab">
+                <!-- <div class="r-title">
+                    <p class="r-title-p">单选</p>
+                </div>
+                <div class="r-type">
+                    <p>
+                        <span class="r-type-key">组件类型</span>
+                        <span class="r-type-value">单选</span>
+                    </p>
+                </div>
+                <div class="r-list r-name">
+                    <p>标题</p>
+                    <input type="text" placeholder="文本框">
+                </div>
+                <div class="r-list r-name">
+                    <p>描述</p>
+                    <input type="text" placeholder="这是描述">
+                </div>
+                <div class="r-list r-must">
+                    <input type="checkbox">
+                    <span>这是必填项</span>
+                </div>
+                <div class="r-list">
+                    <p>选项内容</p>
+                    <div>
+                        <div class="r-list-item">
+                            <input type="radio">
+                            <input type="text" placeholder="选项1">
+                        </div>
+                        <div class="r-list-item">
+                            <input type="radio">
+                            <input type="text" placeholder="选项1">
+                        </div>
+                        <div class="r-list-item">
+                            <input type="radio">
+                            <input type="text" placeholder="选项1">
+                        </div>
+                    </div>
+                    <div class="r-list-btn">
+                        <button>添加选项</button>
+                    </div>
+
+                </div>
+                <div class="r-list">
+                    <p>外观样式</p>
+                </div> -->
+            </div>
+            <!-- 下拉编辑 -->
+            <!-- <div class="r-tab">
+                <div class="r-title">
+                    <p class="r-title-p">下拉</p>
+                </div>
+                <div class="r-type">
+                    <p>
+                        <span class="r-type-key">组件类型</span>
+                        <span class="r-type-value">下拉</span>
+                    </p>
+                </div>
+                <div class="r-list r-name">
+                    <p>标题</p>
+                    <input type="text" placeholder="文本框">
+                </div>
+                <div class="r-list r-name">
+                    <p>描述</p>
+                    <input type="text" placeholder="这是描述">
+                </div>
+                <div class="r-list r-name">
+                    <p>默认提示文字</p>
+                    <input type="text" placeholder="这是描述">
+                </div>
+                <div class="r-list r-must">
+                    <input type="checkbox">
+                    <span>这是必填项</span>
+                </div>
+                <div class="r-list">
+                    <p>选项内容</p>
+                    <div>
+                        <div class="r-list-item">
+                            <input type="radio">
+                            <input type="text" placeholder="选项1">
+                        </div>
+                        <div class="r-list-item">
+                            <input type="radio">
+                            <input type="text" placeholder="选项1">
+                        </div>
+                        <div class="r-list-item">
+                            <input type="radio">
+                            <input type="text" placeholder="选项1">
+                        </div>
+                    </div>
+                    <div class="r-list-btn">
+                        <button>添加选项</button>
+                    </div>
+
+                </div>
+                <div class="r-list">
+                    <p>外观样式</p>
+                </div>
+            </div>  -->
+
+
+
+        </div>
+
+    </div>
+    <script src="js/temp.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        
+        var FormMake = new FormMake({});
+        // FormMake.show();
+
+
+    </script>
+</body>
+
+</html>
+

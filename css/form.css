@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+html , body {
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-1.jpg);
+    background-size: cover;
+}
+.w{
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background: #000;
+}
+.wrapper{
+    position: relative;
+    max-width: 80%;
+    height: 100%;
+    padding: 0 450px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.w-item{
+    float: left;
+}
+.w-left,.w-right{
+    position: absolute;
+    width: 400px;
+    height: 100%;
+}
+.w-left{
+    top: 30;
+    left: 0;
+}
+.w-right{
+    top: 30;
+    right: 0;
+}
+.w-mid{
+    min-width: 800px;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+}
+/* 左侧组件栏 */
+.l-component{
+    width: 100%;
+    height: 540px;
+    
+    background: #F6F9FB;
+    border-top: 15px solid #000;
+
+}
+.l-component h4{
+    width: 100%;
+    height: 30px;
+   
+    line-height: 30px;
+    text-align: center;
+    color: #aaa;
+    font-size: 18px;
+}
+.l-ul{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.l-ul-li{
+    float: left;
+    width: 14%;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin:0 5px 5px 0;
+    text-align: center;
+}
+.l-ul-li:hover{
+    border-color: #267DC5;
+}
+
+
+
+/* 中间表单栏 */
+.w-mid{
+    background: #F6F9FB;
+    border-radius: 10px;
+}
+.mid-main{
+    width: 90%;
+    /* height: 100%; */
+    margin: 0 auto;
+    background-color: #fff;
+}
+/* 表单title */
+.mid-main-title{
+    width: 100%;
+    min-height: 62px;
+    color: #fff;
+    text-align: center;
+    background: rgb(59, 103, 160);
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+.mid-main-title-one{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.mid-main-title-two{
+    font-size:20px;
+}
+/* 表单列表 */
+.mid-li{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 15px;
+    border: 1px dashed transparent;    
+}
+/* .mid-li-active{
+    background: #FFF8DC;
+} */
+
+
+
+.mid-li .mid-li-title{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.mid-li-title span{
+    font-size: 25px;
+    color: red;
+}
+.mid-li .mid-li-desc{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.mid-li:hover{
+    border: 1px dashed #ccc;
+}
+.mid-li-del{
+    position: absolute;
+    display: none;
+    top: -10px;
+    right: -10px;
+    color: red;
+
+}
+.mid-wenben input{
+    width: 70%;
+    height: 30px;
+}
+.mid-choose div{
+    height: 20px;
+    margin-bottom: 10px;
+}
+.mid-choose input{
+    margin-right: 20px;
+}
+
+
+
+
+
+/* 右侧参数 */
+.r-header {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    line-height: 50px;
+    background-color: #267DC5;
+    margin-bottom: 20px;
+}
+.r-header-p{
+    font-size: 18px;
+    color: #fff;
+}
+.r-title{
+    width: 100%;
+    height: 30px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    line-height: 30px;
+    background-color: #267DC5;
+}
+.r-title-p{
+    font-size: 18px;
+    color: #fff;
+} 
+.r-type{
+    height: 36px;
+    line-height: 36px;
+    background: #fff;   
+    padding-left: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.r-type-key{
+    color: #848484;
+    margin-right: 20px;
+} 
+.r-type-value{
+    font-weight: 900;
+}
+.r-list{
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.r-list p {
+    font-size: 18px;
+}
+.r-list input[type=text]{
+    width: 80%;
+    height: 30px;
+    font-size: 16px;
+    color: #848484;
+    border:none;
+    border-bottom: 1px solid #ccc;
+}
+.r-must{
+    border-bottom: 1px solid #CCC;
+}
+.r-must input{
+    width: 18px;
+    height: 18px;
+}
+.r-must span{
+    font-size: 18px;
+}
+.r-list-btn{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.r-list-btn button {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 1px dashed #ccc;
+}
+.r-list-btn button:hover{
+    background: #267DC5;
+    color: #fff;
+}
+.mid-downpull select{
+    width: 80%; 
+    height: 30px;
+    background: #fff;
+}
+.mid-time input{
+    width: 80%;
+    height: 30px;
+}
