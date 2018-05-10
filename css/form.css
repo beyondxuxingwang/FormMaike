@@ -120,19 +120,15 @@ header{
     padding: 30px 15px;
     border: 1px dashed transparent;    
 }
-/* .mid-li-active{
-    background: #FFF8DC;
-} */
-
-
 
 .mid-li .mid-li-title{
     font-size: 18px;
     margin-bottom: 10px;
 }
-.mid-li-title span{
+ .mustfill{
     font-size: 25px;
     color: red;
+    display: none;
 }
 .mid-li .mid-li-desc{
     font-size: 16px;
@@ -257,4 +253,8 @@ header{
 .mid-time input{
     width: 80%;
     height: 30px;
+}
+.r-list-del{
+    color: red;
+    display: none;
 }

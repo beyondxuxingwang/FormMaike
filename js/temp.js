@@ -1,11 +1,12 @@
 // 文本框 
 var wenben =
     '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
-    '<p class="mid-li-title">文本框' +
-    '<span>*</span>' +
+    '<p class="mid-li-title">'+
+    '<span class="m-title">文本框</span>'+
+    '<span class="mustfill">*</span>' +
     '</p>' +
     '<p class="mid-li-desc">这是文本描述</p>' +
-    '<input type="text" disabled="disabled">',
+    '<input  type="text" disabled="disabled">',
     // 文本框编辑
     wenbenEdit =
         '<div class="r-title">' +
@@ -16,14 +17,14 @@ var wenben =
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>标题</p>' +
-        '<input type="text" placeholder="文本框">' +
+        '<input name="m-title" type="text" placeholder="文本框">' +
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>描述</p>' +
-        '<input type="text" placeholder="这是描述">' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
         '<div class="r-list r-must">' +
-        '<input type="checkbox">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
         '<span>这是必填项</span>' +
         '</div>' +
         '<div class="r-list">' +
@@ -33,7 +34,7 @@ var wenben =
     // 选择框
     choose =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
-        '<p class="mid-li-title">选择框<span>*</span></p>' +
+        '<p class="mid-li-title"><span class="m-title">选择框</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是选择描述</p>' +
         '<div>' +
         '<input type="radio" disabled="disabled">' +
@@ -59,31 +60,34 @@ var wenben =
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>标题</p>' +
-        '<input type="text" placeholder="文本框">' +
+        '<input name="m-title" type="text" placeholder="文本框">' +
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>描述</p>' +
-        '<input type="text" placeholder="这是描述">' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
         '<div class="r-list r-must">' +
-        '<input type="checkbox">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
         '<span>这是必填项</span>' +
         '</div>' +
         '<div class="r-list">' +
         '<p>选项内容</p>' +
-        '<div>' +
-        '<div class="r-list-item">' +
-        '<input type="radio">' +
-        '<input type="text" placeholder="选项1">' +
-        '</div>' +
-        '<div class="r-list-item">' +
-        '<input type="radio">' +
-        '<input type="text" placeholder="选项1">' +
-        '</div>' +
-        '<div class="r-list-item">' +
-        '<input type="radio">' +
-        '<input type="text" placeholder="选项1">' +
-        '</div>' +
+        '<div class="r-list-list">' +
+            '<div class="r-list-item">' +
+            '<input type="radio">' +
+            '<input type="text" placeholder="选项1">' +
+            '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
+            '</div>' +
+            '<div class="r-list-item">' +
+            '<input type="radio">' +
+            '<input type="text" placeholder="选项1">' +
+            '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
+            '</div>' +
+            '<div class="r-list-item">' +
+            '<input type="radio">' +
+            '<input type="text" placeholder="选项1">' +
+            '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
+            '</div>' +
         '</div>' +
         '<div class="r-list-btn">' +
         '<button>添加选项</button>' +
@@ -96,7 +100,7 @@ var wenben =
     //下拉框
     downpull =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
-        '<p class="mid-li-title">下拉框<span>*</span></p>' +
+        '<p class="mid-li-title"><span>下拉框</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是下拉描述</p>' +
         '<select  disabled="disabled"></select>',
     downpullEdit =
@@ -148,6 +152,6 @@ var wenben =
     //时间日期框
     datetime =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
-        '<p class="mid-li-title">下拉框<span>*</span></p>' +
+        '<p class="mid-li-title"><span>日期</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是下拉描述</p>' +
         '<input type="date" disabled="disabled"> '           
