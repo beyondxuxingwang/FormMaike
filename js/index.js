@@ -4,7 +4,6 @@
     var FormMake = function (options) {
         this.init(options || {});
         this.bind();
-
     };
     FormMake.prototype = {
         init: function (options) {
@@ -61,7 +60,8 @@
                 this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
             }
             this.appendStyle();
-            this.delLiDom();
+            // 
+            this.delLiDom(this.midLiDel);
         },
         appendStyle: function () {
             var _this = this;
@@ -96,13 +96,17 @@
             }
         },
 
-        delLiDom: function () {
+        // 删除当前dom
+        delLiDom: function (del) {
+            console.log(del);
+
             var _this = this;
             for (let i = 0; i < this.midLiDel.length; i++) {
                 this.midLiDel[i].onclick = function () {
                     this.parentNode.remove();
                 }
             }
+
         },
         // 渲染出来右侧编辑的dom
         appendRightDom: function (dataId, dataNum) {
@@ -121,15 +125,15 @@
         rightEdit: function (dataId, dataNum) {
             //监听righTab下面所有input change事件
             var _this = this;
+            var itemId = 3;
             // 根据dataNum 获取相对应的dom元素
             this.RightInputDom = this.rightTab.querySelectorAll("input"); // 获取右侧编辑的input
             _this.MidInputDom = _this.midUl.querySelector('[data-num="' + dataNum + '"]'); //获取中间li 
             this.RlistItem = this.rightTab.querySelectorAll(".r-list-item"); // 获取选项dom
-            this.RightAppendDom = this.rightTab.querySelector('.r-list-btn'); // 获取添加选项
+            this.RightAppendDom = this.rightTab.querySelector('.r-list-btn'); // 获取添加选项按钮
 
             console.log(this.RlistItem);
-
-            // 
+            // 右侧编辑渲染到中间
             this.rightTab.oninput = function (e) {
                 var classValue = e.target.name;
                 var textValue = e.target.value;
@@ -142,36 +146,36 @@
                     _this.MidInputDom.querySelector('.' + classValue).innerHTML = textValue;
                 }
             };
-            // 选择框中的选择选项 hover 事件
-            for (let i = 0; i < this.RlistItem.length; i++) {
-                this.RlistItem[i].onmouseover = function () {
-                    this.querySelector('.r-list-del').style.display = 'inline-block';
+            // 因为文本框没有多级选项 所以不为空在支持此操作 
+            if (this.RightAppendDom !== null) {
+                // 选择框中的选择选项 hover 事件
+                for (let i = 0; i < this.RlistItem.length; i++) {
+                    this.RlistItem[i].onmouseover = function () {
+                        this.querySelector('.r-list-del').style.display = 'inline-block';
+                    }
+                    this.RlistItem[i].onmouseout = function () {
+                        this.querySelector('.r-list-del').style.display = 'none';
+                    }
+                };
+                this.RightAppendDom.onclick = function () {
+                    itemId++;
+                    this.RListList = _this.rightTab.querySelector('.r-list-list');
+                    this.itemDom = document.createElement('div');
+                    this.itemDom.className = "r-list-item";
+                    this.itemDom.innerHTML = itemHtml;
+                    this.itemDom.childNodes[1].setAttribute('name', 'item' + itemId);
+                    this.RListList.appendChild(this.itemDom);
+                    // 渲染中间li中的选择项
+                    this.midLiDom = _this.midUl.querySelector('[data-num="' + dataNum + '"]'); //获取中间li 
+                    this.midItemDom = document.createElement('div');
+                    this.midItemDom.innerHTML = midItemHtml;
+                    this.midItemDom.childNodes[1].className = 'item' + itemId;
+                    _this.MidInputDom.appendChild(this.midItemDom);
+                    return this; 
                 }
-                this.RlistItem[i].onmouseout = function () {  
-                    this.querySelector('.r-list-del').style.display = 'none';
-                }
-            };
-            // 点击添加选项
-            this.RightAppendDom.onclick = function () {
-                _this.RightAppendItemDom();
             }
         },
-        RightAppendItemDom:function () {  
-            var _this = this;
-            console.log(111);
-            var itemHtml = 
-            // '<div class="r-list-item">' +
-            '<input type="radio">' +
-            '<input type="text" placeholder="选项13">' +
-            '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' ;
-            // '</div>' 
-            this.RListList = _this.rightTab.querySelector('.r-list-list');
-            this.itemDom = document.createElement('div');
-            this.itemDom.className = "r-list-item";
-            this.itemDom.innerHTML = itemHtml;
-            this.RListList.appendChild(this.itemDom);
-            _this.rightEdit();
-        }
+        //
 
 
     };
