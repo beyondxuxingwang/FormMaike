@@ -258,3 +258,15 @@ header{
     color: red;
     display: none;
 }
+.formBtn{
+    margin-top: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.formBtn button{
+    width: 80px;
+    height: 30px;
+    background: #267DC5;
+    color: #fff;
+}

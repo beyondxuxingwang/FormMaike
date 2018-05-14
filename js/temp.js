@@ -5,7 +5,7 @@ var wenben =
     '<span class="m-title">文本框</span>' +
     '<span class="mustfill">*</span>' +
     '</p>' +
-    '<p class="mid-li-desc">这是文本描述</p>' +
+    '<p class="mid-li-desc"></p>' +
     '<input  type="text" disabled="disabled">',
     // 文本框编辑
     wenbenEdit =
@@ -35,21 +35,21 @@ var wenben =
     choose =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
         '<p class="mid-li-title"><span class="m-title">选择框</span><span class="mustfill">*</span></p>' +
-        '<p class="mid-li-desc">这是选择描述</p>' +
-        '<div>' +
+        '<p class="mid-li-desc"></p>' +
+        '<div class="m-li-item">' +
         '<input type="radio" disabled="disabled">' +
         '<span class="item1">选项1</span>' +
         '</div>' +
-        '<div>' +
+        '<div class="m-li-item">' +
         '<input type="radio" disabled="disabled">' +
         '<span class="item2">选项2</span>' +
         '</div>' +
-        '<div>' +
+        '<div class="m-li-item">' +
         '<input type="radio" disabled="disabled">' +
         '<span class="item3">选项3</span>' +
         '</div>',
     // 中间选择框添加选项
-    midItemHtml =
+    choosemidItemHtml =
         '<input type="radio" disabled="disabled">' +
         '<span>选项3</span>',
     chooseEdit =
@@ -107,14 +107,18 @@ var wenben =
         '<input type="text" placeholder="选项">' +
         '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>',
 
-
-
     //下拉框
     downpull =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
-        '<p class="mid-li-title"><span>下拉框</span><span class="mustfill">*</span></p>' +
+        '<p class="mid-li-title"><span class="m-title">选择框</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是下拉描述</p>' +
-        '<select  disabled="disabled"></select>',
+        '<select class="mySelect" disabled="disabled" >'+
+            '<option class="item1" value="选项1">选项1</option>'+
+            '<option class="item2" value="选项2">选项1</option>'+
+            '<option class="item3" value="选项3">选项1</option>'+
+        '</select>',
+    // downpullmidItemHtml =
+    //     '<option value="选项3">选项1</option>',
     downpullEdit =
         '<div class="r-title">' +
         '<p class="r-title-p">单选</p>' +
@@ -127,30 +131,33 @@ var wenben =
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>标题</p>' +
-        '<input type="text" placeholder="文本框">' +
+        '<input name="m-title" type="text" placeholder="文本框">' +
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>描述</p>' +
-        '<input type="text" placeholder="这是描述">' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
         '<div class="r-list r-must">' +
-        '<input type="checkbox">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0">' +
         '<span>这是必填项</span>' +
         '</div>' +
         '<div class="r-list">' +
         '<p>选项内容</p>' +
-        '<div>' +
+        '<div class="r-list-list">' +
         '<div class="r-list-item">' +
-        '<input type="radio">' +
-        '<input type="text" placeholder="选项1">' +
+        '<input type="radio" disabled="disabled">' +
+        '<input name="item1" type="text" placeholder="选项1">' +
+        '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
         '</div>' +
         '<div class="r-list-item">' +
-        '<input type="radio">' +
-        '<input type="text" placeholder="选项1">' +
+        '<input type="radio" disabled="disabled">' +
+        '<input name="item2" type="text" placeholder="选项2">' +
+        '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
         '</div>' +
         '<div class="r-list-item">' +
-        '<input type="radio">' +
-        '<input type="text" placeholder="选项1">' +
+        '<input type="radio" disabled="disabled">' +
+        '<input name="item3" type="text" placeholder="选项3">' +
+        '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
         '</div>' +
         '</div>' +
         '<div class="r-list-btn">' +

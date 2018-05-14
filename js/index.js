@@ -17,7 +17,7 @@
             for (var i = 0; i < this.components.length; i++) {
                 this.components[i].onclick = function () {
                     var dataId = this.getAttribute('data-id');
-                    console.log(dataId);
+                    
                     _this.appendMidLiDom(dataId);
                 }
             }
@@ -48,8 +48,6 @@
                 this.midUl.appendChild(this.midLi);
                 this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
                 this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
-
-
             } else if (dataId == '4') {
                 this.midLi = document.createElement('li');
                 this.midLi.className = "mid-li mid-time";
@@ -95,11 +93,9 @@
                 }
             }
         },
-
-        // 删除当前dom
+        // 中间删除当前dom
         delLiDom: function (del) {
-            console.log(del);
-
+           
             var _this = this;
             for (let i = 0; i < this.midLiDel.length; i++) {
                 this.midLiDel[i].onclick = function () {
@@ -126,13 +122,12 @@
             //监听righTab下面所有input change事件
             var _this = this;
             var itemId = 3;
+
             // 根据dataNum 获取相对应的dom元素
             this.RightInputDom = this.rightTab.querySelectorAll("input"); // 获取右侧编辑的input
             _this.MidInputDom = _this.midUl.querySelector('[data-num="' + dataNum + '"]'); //获取中间li 
             this.RlistItem = this.rightTab.querySelectorAll(".r-list-item"); // 获取选项dom
             this.RightAppendDom = this.rightTab.querySelector('.r-list-btn'); // 获取添加选项按钮
-
-            console.log(this.RlistItem);
             // 右侧编辑渲染到中间
             this.rightTab.oninput = function (e) {
                 var classValue = e.target.name;
@@ -148,15 +143,6 @@
             };
             // 因为文本框没有多级选项 所以不为空在支持此操作 
             if (this.RightAppendDom !== null) {
-                // 选择框中的选择选项 hover 事件
-                for (let i = 0; i < this.RlistItem.length; i++) {
-                    this.RlistItem[i].onmouseover = function () {
-                        this.querySelector('.r-list-del').style.display = 'inline-block';
-                    }
-                    this.RlistItem[i].onmouseout = function () {
-                        this.querySelector('.r-list-del').style.display = 'none';
-                    }
-                };
                 this.RightAppendDom.onclick = function () {
                     itemId++;
                     this.RListList = _this.rightTab.querySelector('.r-list-list');
@@ -165,17 +151,71 @@
                     this.itemDom.innerHTML = itemHtml;
                     this.itemDom.childNodes[1].setAttribute('name', 'item' + itemId);
                     this.RListList.appendChild(this.itemDom);
-                    // 渲染中间li中的选择项
+                    // 多选框和下拉框渲染中间li中的选择项不同
                     this.midLiDom = _this.midUl.querySelector('[data-num="' + dataNum + '"]'); //获取中间li 
-                    this.midItemDom = document.createElement('div');
-                    this.midItemDom.innerHTML = midItemHtml;
-                    this.midItemDom.childNodes[1].className = 'item' + itemId;
-                    _this.MidInputDom.appendChild(this.midItemDom);
-                    return this; 
+                    if(dataId == 2){ // 选择框
+                        this.midItemDom = document.createElement('div');
+                        this.midItemDom.className = "m-li-item";
+                        this.midItemDom.innerHTML = choosemidItemHtml;
+                        this.midItemDom.childNodes[1].className = 'item' + itemId;
+                        _this.MidInputDom.appendChild(this.midItemDom);
+                        console.log( _this.MidInputDom);
+                        
+                    }else if(dataId == 3){ // 下拉框
+                        console.log(dataId);
+                        
+                        // this.midItemDom = document.createElement('option');
+                        // this.midItemDom.className = 'item'+itemId;  
+                        this.myselect = _this.MidInputDom.querySelector('select');   
+
+                        this.myselect.options[this.myselect.options.length] = new Option("text","value");  
+
+                        this.myoptions = _this.MidInputDom.querySelectorAll('option');
+                        console.log(this.myoptions);
+                        for(var i = 0 ;i<this.myoptions.length;i++){
+                            var j=i+1;
+                            this.myoptions[i].className = 'm-li-item item'+j;
+
+                        }
+                           
+                    }
+                   
+
+                    _this.ChooseItemMouseover(dataId, dataNum);
                 }
             }
+            this.ChooseItemMouseover(dataId, dataNum);
         },
-        //
+        // 多选框 鼠标进入出现del按钮，以及点击del按钮事件
+        ChooseItemMouseover: function (dataId, dataNum) {
+            var _this = this;
+            this.RlistItem = this.rightTab.querySelectorAll(".r-list-item"); // 获取选项dom
+            // 获取所有item上的del   mid 表单中的相对应的选项也对应删除
+            this.itemDel = this.rightTab.querySelectorAll('.r-list-del');
+            // 获取相对应的选项
+            this.mLiItem = this.midUl.querySelector('[data-num="' + dataNum + '"]').querySelectorAll('.m-li-item');
+            // 选择框中的选择选项 hover 事件
+            for (let i = 0; i < this.RlistItem.length; i++) {
+                this.RlistItem[i].onmouseover = function () {
+                    this.querySelector('.r-list-del').style.display = 'inline-block';
+                }
+                this.RlistItem[i].onmouseout = function () {
+                    this.querySelector('.r-list-del').style.display = 'none';
+                }
+            };
+            // 右侧编辑框选择项的删除事件
+            for (let i = 0; i < this.itemDel.length; i++) {
+                
+                    this.itemDel[i].onclick = function () {
+                        this.parentNode.remove();
+                        _this.mLiItem[i].remove();
+                    }
+          
+            }
+        },
+
+
+
 
 
     };
