@@ -45,7 +45,7 @@
                     </li> -->
                 </ul>
                 <div class="formBtn">
-                    <button>提交</button>
+                    <button id="formBtn">提交</button>
                 </div>
             </div>
         </div>
@@ -60,6 +60,7 @@
             </div>
             
 
+            
 
 
         </div>
@@ -71,7 +72,10 @@
         
         var FormMake = new FormMake({});
         // FormMake.show();
+        document.getElementById('formBtn').onclick = function () {  
+            alert(1111)
         
+        }
 
     </script>
 </body>
