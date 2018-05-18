@@ -128,10 +128,16 @@
             _this.MidInputDom = _this.midUl.querySelector('[data-num="' + dataNum + '"]'); //获取中间li 
             this.RlistItem = this.rightTab.querySelectorAll(".r-list-item"); // 获取选项dom
             this.RightAppendDom = this.rightTab.querySelector('.r-list-btn'); // 获取添加选项按钮
+
+
+
             // 右侧编辑渲染到中间
             this.rightTab.oninput = function (e) {
                 var classValue = e.target.name;
                 var textValue = e.target.value;
+
+              
+                
 
                 if (textValue == '1') {
                     _this.MidInputDom.querySelector('.' + classValue).style.display = 'inline-block';
@@ -139,6 +145,9 @@
                     _this.MidInputDom.querySelector('.' + classValue).style.display = 'none';
                 } else {
                     _this.MidInputDom.querySelector('.' + classValue).innerHTML = textValue;
+                    
+
+
                 }
             };
             // 因为文本框没有多级选项 所以不为空在支持此操作 

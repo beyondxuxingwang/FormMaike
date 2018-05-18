@@ -6,6 +6,9 @@ var wenben =
     '<span class="mustfill">*</span>' +
     '</p>' +
     '<p class="mid-li-desc"></p>' +
+    '<p class="mid-li-type" style="display:none"></p>' +
+    '<p class="mid-li-name" style="display:none"></p>' +
+    '<p class="mid-li-display" style="display:none"></p>' +
     '<input  type="text" disabled="disabled">',
     // 文本框编辑
     wenbenEdit =
@@ -15,14 +18,38 @@ var wenben =
         '<div class="r-type">' +
         '<p><span class="r-type-key">组件类型</span><span class="r-type-value">单行文本</span></p>' +
         '</div>' +
+        // label 
         '<div class="r-list r-name">' +
-        '<p>标题</p>' +
-        '<input name="m-title" type="text" placeholder="文本框">' +
+        '<p>label 标题</p>' +
+        '<input name="m-title" type="text" placeholder="请输入lable">' +
         '</div>' +
+        // desc  描述
         '<div class="r-list r-name">' +
         '<p>描述</p>' +
         '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
+        // type
+        '<div class="r-list r-name">' +
+        '<p>type 类型 </p>' +
+        '<input name="mid-li-type" type="text" >' +
+        '</div>' +
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // value
+        '<div class="r-list r-name">' +
+        '<p>value值</p>' +
+        '<input name="mid-li-value" type="text" >' +
+        '</div>' +
+        // disabled
+        '<div class="r-list r-name">' +
+        '<p>disabled 属性 </p>' +
+        '<input name="mid-li-disabled" type="text" >' +
+        '</div>' +
+
+
         '<div class="r-list r-must">' +
         '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
         '<span>这是必填项</span>' +

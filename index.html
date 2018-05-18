@@ -68,13 +68,35 @@
     </div>
     <script src="js/temp.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script>
         
         var FormMake = new FormMake({});
         // FormMake.show();
         document.getElementById('formBtn').onclick = function () {  
-            alert(1111)
+            
+    
+           
+            
+           
+            var  arr = [];
+           
+            // 获取中间表单所有的Li 标签
+
+            $('.mid-li').each(function (i) {
+                var obj = {};
+                obj.label = $(this).find('.m-title').html();
+                obj.type =  $(this).find('.mid-li-type').html();
+                obj.name = $(this).find('.mid-li-name').html();
+                obj.value =  $(this).find('.mid-li-value').html();
+                obj.disabled =  $(this).find('.mid-li-disabled').html();
         
+                arr.push(obj)
+            });
+
+
+            console.log(arr);
+            
         }
 
     </script>
