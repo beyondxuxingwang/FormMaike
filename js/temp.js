@@ -8,7 +8,10 @@ var wenben =
     '<p class="mid-li-desc"></p>' +
     '<p class="mid-li-type" style="display:none"></p>' +
     '<p class="mid-li-name" style="display:none"></p>' +
-    '<p class="mid-li-display" style="display:none"></p>' +
+    '<p class="mid-li-disabled" style="display:none"></p>' +
+    '<p class="mid-li-value" style="display:none"></p>' +
+    '<p class="mid-li-placeholder" style="display:none"></p>' +
+
     '<input  type="text" disabled="disabled">',
     // 文本框编辑
     wenbenEdit =
@@ -21,7 +24,7 @@ var wenben =
         // label 
         '<div class="r-list r-name">' +
         '<p>label 标题</p>' +
-        '<input name="m-title" type="text" placeholder="请输入lable">' +
+        '<input name="m-title" type="text" placeholder="例如：姓名">' +
         '</div>' +
         // desc  描述
         '<div class="r-list r-name">' +
@@ -31,7 +34,7 @@ var wenben =
         // type
         '<div class="r-list r-name">' +
         '<p>type 类型 </p>' +
-        '<input name="mid-li-type" type="text" >' +
+        '<input name="mid-li-type" type="text"  placeholder="例如：text,number,email,url">' +
         '</div>' +
         // name  
         '<div class="r-list r-name">' +
@@ -48,6 +51,13 @@ var wenben =
         '<p>disabled 属性 </p>' +
         '<input name="mid-li-disabled" type="text" >' +
         '</div>' +
+        // placeholder 
+        '<div class="r-list r-name">' +
+        '<p>placeholder 属性 </p>' +
+        '<input name="mid-li-placeholder" type="text" >' +
+        '</div>' +
+       
+
 
 
         '<div class="r-list r-must">' +
@@ -63,6 +73,15 @@ var wenben =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
         '<p class="mid-li-title"><span class="m-title">选择框</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc"></p>' +
+        '<p class="mid-li-type" style="display:none"></p>' +
+        '<p class="mid-li-name" style="display:none"></p>' +
+        '<p class="mid-li-disabled" style="display:none"></p>' +
+        '<p class="mid-li-placeholder" style="display:none"></p>' +
+
+
+
+
+
         '<div class="m-li-item">' +
         '<input type="radio" disabled="disabled">' +
         '<span class="item1">选项1</span>' +
@@ -90,13 +109,39 @@ var wenben =
         '</p>' +
         '</div>' +
         '<div class="r-list r-name">' +
-        '<p>标题</p>' +
+        '<p> label 标题</p>' +
         '<input name="m-title" type="text" placeholder="文本框">' +
         '</div>' +
         '<div class="r-list r-name">' +
         '<p>描述</p>' +
         '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
+        // type
+        '<div class="r-list r-name">' +
+        '<p>type 类型 </p>' +
+        '<input name="mid-li-type" type="text"  placeholder="例如：text,number,email,url">' +
+        '</div>' +
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // disabled
+        '<div class="r-list r-name">' +
+        '<p>disabled 属性 </p>' +
+        '<input name="mid-li-disabled" type="text" >' +
+        '</div>' +
+        // placeholder 
+        '<div class="r-list r-name">' +
+        '<p>placeholder 属性 </p>' +
+        '<input name="mid-li-placeholder" type="text" >' +
+        '</div>' +
+
+
+
+
+
+
         '<div class="r-list r-must">' +
         '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
         '<span>这是必填项</span>' +
@@ -139,13 +184,21 @@ var wenben =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
         '<p class="mid-li-title"><span class="m-title">选择框</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是下拉描述</p>' +
+
+        '<p class="mid-li-type" style="display:none"></p>' +
+        '<p class="mid-li-name" style="display:none"></p>' +
+        '<p class="mid-li-disabled" style="display:none"></p>' +
+        '<p class="mid-li-placeholder" style="display:none"></p>' +
+
+
+
         '<select class="mySelect" disabled="disabled" >'+
             '<option class="item1" value="选项1">选项1</option>'+
             '<option class="item2" value="选项2">选项1</option>'+
             '<option class="item3" value="选项3">选项1</option>'+
         '</select>',
-    // downpullmidItemHtml =
-    //     '<option value="选项3">选项1</option>',
+   
+
     downpullEdit =
         '<div class="r-title">' +
         '<p class="r-title-p">单选</p>' +
@@ -164,6 +217,29 @@ var wenben =
         '<p>描述</p>' +
         '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
+
+        // type
+        '<div class="r-list r-name">' +
+        '<p>type 类型 </p>' +
+        '<input name="mid-li-type" type="text"  placeholder="例如：text,number,email,url">' +
+        '</div>' +
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // disabled
+        '<div class="r-list r-name">' +
+        '<p>disabled 属性 </p>' +
+        '<input name="mid-li-disabled" type="text" >' +
+        '</div>' +
+        // placeholder 
+        '<div class="r-list r-name">' +
+        '<p>placeholder 属性 </p>' +
+        '<input name="mid-li-placeholder" type="text" >' +
+        '</div>' +
+
+
         '<div class="r-list r-must">' +
         '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0">' +
         '<span>这是必填项</span>' +
@@ -200,4 +276,15 @@ var wenben =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
         '<p class="mid-li-title"><span>日期</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是下拉描述</p>' +
-        '<input type="date" disabled="disabled"> '           
+        '<input type="date" disabled="disabled"> ' 
+
+
+
+
+
+
+
+
+
+
+

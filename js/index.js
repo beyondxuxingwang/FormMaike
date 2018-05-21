@@ -58,7 +58,7 @@
                 this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
             }
             this.appendStyle();
-            // 
+
             this.delLiDom(this.midLiDel);
         },
         appendStyle: function () {
@@ -114,6 +114,8 @@
                 this.rightTab.innerHTML = chooseEdit;
             } else if (dataId == '3') {
                 this.rightTab.innerHTML = downpullEdit;
+            } else if (dataId == '4') {
+                this.rightTab.innerHTML = wenbenEdit;
             }
             this.rightEdit(dataId, dataNum);
         },
@@ -145,9 +147,6 @@
                     _this.MidInputDom.querySelector('.' + classValue).style.display = 'none';
                 } else {
                     _this.MidInputDom.querySelector('.' + classValue).innerHTML = textValue;
-                    
-
-
                 }
             };
             // 因为文本框没有多级选项 所以不为空在支持此操作 
@@ -162,6 +161,7 @@
                     this.RListList.appendChild(this.itemDom);
                     // 多选框和下拉框渲染中间li中的选择项不同
                     this.midLiDom = _this.midUl.querySelector('[data-num="' + dataNum + '"]'); //获取中间li 
+
                     if(dataId == 2){ // 选择框
                         this.midItemDom = document.createElement('div');
                         this.midItemDom.className = "m-li-item";
@@ -184,7 +184,6 @@
                         for(var i = 0 ;i<this.myoptions.length;i++){
                             var j=i+1;
                             this.myoptions[i].className = 'm-li-item item'+j;
-
                         }
                            
                     }

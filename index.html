@@ -23,9 +23,6 @@
                     <li class="l-ul-li" data-id="2">选择</li>
                     <li class="l-ul-li" data-id="3">下拉</li>
                     <li class="l-ul-li" data-id="4">日期时间</li>
-                    <li class="l-ul-li" data-id="5">数字</li>
-                    <li class="l-ul-li" data-id="6">评分</li>
-                    <li class="l-ul-li" data-id="7">城市</li>
                 </ul>
             </div>
         </div>
@@ -56,11 +53,11 @@
             </div>
             <!-- 编辑模板渲染处 -->
             <div class="r-tab" id="r-tab">
-                
-            </div>
-            
 
-            
+            </div>
+
+
+
 
 
         </div>
@@ -70,37 +67,61 @@
     <script src="js/index.js"></script>
     <script src="js/jquery.min.js"></script>
     <script>
-        
+
         var FormMake = new FormMake({});
         // FormMake.show();
-        document.getElementById('formBtn').onclick = function () {  
-            
-    
-           
-            
-           
-            var  arr = [];
-           
+        document.getElementById('formBtn').onclick = function () {
+
+            var arr = [];
+
             // 获取中间表单所有的Li 标签
 
             $('.mid-li').each(function (i) {
                 var obj = {};
-                obj.label = $(this).find('.m-title').html();
-                obj.type =  $(this).find('.mid-li-type').html();
-                obj.name = $(this).find('.mid-li-name').html();
-                obj.value =  $(this).find('.mid-li-value').html();
-                obj.disabled =  $(this).find('.mid-li-disabled').html();
-        
-                arr.push(obj)
+                
+                obj.label = $(this).find('.m-title').html(); // 获取标题
+                obj.type = $(this).find('.mid-li-type').html();// 获取类型
+                obj.name = $(this).find('.mid-li-name').html();// 获取name
+
+                var item = [];
+                // 单选框,多选框 以及下拉框
+                if ($(this).attr("data-id") == 2) {
+                    $('.m-li-item span').each(function () {
+                        var itemObj = {};
+                        itemObj.value = $(this).html();
+
+                        item.push(itemObj);
+                    })
+
+                    obj.items = item;
+                    arr.push(obj);
+
+                } else if ($(this).attr("data-id") == 3) {
+                    $('option').each(function () {
+                        var itemObj = {};
+                        itemObj.value = $(this).html();
+
+                        item.push(itemObj);
+                    })
+
+                    obj.items = item;
+                    arr.push(obj);
+                } else {
+                    obj.value = $(this).find('.mid-li-value').html();
+                    obj.disabled = $(this).find('.mid-li-disabled').html();
+                    arr.push(obj)
+                }
+
             });
 
 
             console.log(arr);
-            
+
+
+
         }
 
     </script>
 </body>
 
 </html>
-
