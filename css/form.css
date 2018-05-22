@@ -157,8 +157,12 @@ header{
     height: 20px;
     margin-bottom: 10px;
 }
-.mid-choose input{
+.mid-choose input,.mid-sex input{
     margin-right: 20px;
+}
+.mid-username   input {
+    width: 70%;
+    height: 30px;
 }
 
 

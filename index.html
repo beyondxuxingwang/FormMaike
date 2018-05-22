@@ -23,6 +23,13 @@
                     <li class="l-ul-li" data-id="2">选择</li>
                     <li class="l-ul-li" data-id="3">下拉</li>
                     <li class="l-ul-li" data-id="4">日期时间</li>
+
+
+                    <li class="l-ul-li" data-id="5">姓名</li>
+                    <li class="l-ul-li" data-id="6">手机</li>
+                    <li class="l-ul-li" data-id="7">邮箱</li>
+                    <li class="l-ul-li" data-id="8">性别</li>
+
                 </ul>
             </div>
         </div>
@@ -52,12 +59,10 @@
                 <p class="r-header-p">编辑表单</p>
             </div>
             <!-- 编辑模板渲染处 -->
+            
             <div class="r-tab" id="r-tab">
 
             </div>
-
-
-
 
 
         </div>
@@ -82,10 +87,11 @@
                 obj.label = $(this).find('.m-title').html(); // 获取标题
                 obj.type = $(this).find('.mid-li-type').html();// 获取类型
                 obj.name = $(this).find('.mid-li-name').html();// 获取name
+                obj.required = $(this).find('.mid-li-required').html();// required
 
                 var item = [];
                 // 单选框,多选框 以及下拉框
-                if ($(this).attr("data-id") == 2) {
+                if ($(this).attr("data-id") == 2 || $(this).attr("data-id") == 8) {
                     $('.m-li-item span').each(function () {
                         var itemObj = {};
                         itemObj.value = $(this).html();

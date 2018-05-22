@@ -56,6 +56,40 @@
                 this.midUl.appendChild(this.midLi);
                 this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
                 this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+            }else if (dataId == '5') {
+                this.midLi = document.createElement('li');
+                this.midLi.className = "mid-li mid-username";
+                this.midLi.setAttribute('data-id', dataId);
+                this.midLi.innerHTML = username;
+                this.midUl.appendChild(this.midLi);
+                this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
+                this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+            }else if (dataId == '6') {
+                this.midLi = document.createElement('li');
+                this.midLi.className = "mid-li mid-phone";
+                this.midLi.setAttribute('data-id', dataId);
+                this.midLi.innerHTML = phone;
+                this.midUl.appendChild(this.midLi);
+                this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
+                this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+            }
+            else if (dataId == '7') {
+                this.midLi = document.createElement('li');
+                this.midLi.className = "mid-li mid-email";
+                this.midLi.setAttribute('data-id', dataId);
+                this.midLi.innerHTML = email;
+                this.midUl.appendChild(this.midLi);
+                this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
+                this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+            }
+            else if (dataId == '8') {
+                this.midLi = document.createElement('li');
+                this.midLi.className = "mid-li mid-sex";
+                this.midLi.setAttribute('data-id', dataId);
+                this.midLi.innerHTML = sex;
+                this.midUl.appendChild(this.midLi);
+                this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
+                this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
             }
             this.appendStyle();
 
@@ -116,6 +150,14 @@
                 this.rightTab.innerHTML = downpullEdit;
             } else if (dataId == '4') {
                 this.rightTab.innerHTML = wenbenEdit;
+            }else if(dataId == '5'){
+                this.rightTab.innerHTML = usernameEdit;
+            }else if(dataId == '6'){
+                this.rightTab.innerHTML = phoneEdit;
+            }else if(dataId == '7'){
+                this.rightTab.innerHTML = emailEdit;
+            }else if(dataId == '8'){
+                this.rightTab.innerHTML = sexEdit;
             }
             this.rightEdit(dataId, dataNum);
         },
