@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/form.css">
+</head>
+</head>
+
+<body>
+    <div class="wrapper w">
+        <!-- 左侧组件栏 -->
+        <!-- 中间表单栏 -->
+        <div class="w-item w-mid">
+            <div class="mid-main">
+                <div class="mid-main-title">
+                    <p class="mid-main-title-one">新建表单</p>
+                    <p class="mid-main-title-two">
+
+                    </p>
+                </div>
+
+                <ul id="mid-ul" class="mid-ul">
+                    <!-- 文本框 模板-->
+                    <!-- <li class="mid-li mid-wenben">
+                            </li> -->
+                </ul>
+                <div class="formBtn">
+                    <button id="formBtn">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="plugin/jquery.min.js"></script>
+    <script>
+        var arr = [
+            { className: "mid-li mid-wenben", label: "姓名", type: "text", name: "username", required: "", value: "" },
+            { className: "mid-li mid-wenben", label: "手机", type: "text", name: "phone", required: "", value: "" },
+            {
+                className: "mid-li mid-choose", label: "爱好", type: "radio", name: "aihao", required: "",
+                items: [
+                    { value: "1111" },
+                    { value: "2222" },
+                    { value: "3333" }
+                ]
+            },
+            {
+                className: "mid-li mid-downpull", label: "爱好", type: "select", name: "",
+                items: [
+                    { value: "safsdaf" },
+                    { value: "sadfasd" },
+                    { value: "asdfsadfsad" }
+                ]
+            }
+        ];
+
+        var midUl = document.getElementById('mid-ul');
+            console.log(arr);
+            
+
+        for (var i = 0; i < arr.length; i++) {
+            // console.log(arr[i].type);
+            // console.log(typeof (arr));
+
+            if (arr[i].type == 'text') {
+
+                var midLi = document.createElement('li');//创建li 
+                var text =
+                    '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+                    '<p class="mid-li-title">' +
+                    '<span class="m-title">' + arr[i].label + '</span>' +
+                    '<span class="mustfill">*</span>' +
+                    '</p>' +
+                    '<p class="mid-li-desc"></p>' +
+                    '<input  type="text" disabled="disabled" >';
+
+                midLi.className = arr[i].className;
+                midLi.innerHTML = text;
+
+                midUl.appendChild(midLi);
+
+            } else if (arr[i].type == 'radio') {
+                console.log(1111);
+
+                var midLi = document.createElement('li');//创建li 
+                var text =
+                    '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+                    '<p class="mid-li-title">' +
+                    '<span class="m-title">' + arr[i].label + '</span>' +
+                    '<span class="mustfill">*</span>' +
+                    '</p>' +
+                    '<p class="mid-li-desc"></p>';
+                midLi.className = arr[i].className;
+                midLi.innerHTML = text;
+
+                midUl.appendChild(midLi);
+                console.log(arr[i].items);
+                
+                for (var j = 0; j < arr[i].items.length; j++) {
+                    
+                    var divItem = document.createElement('div');// 创建div
+                    var text =
+                        '<input type="radio" name="">' +
+                        '<span class="item' + j + '">' + arr[i].items[j].value + '</span>';
+
+                    divItem.className = 'm-li-item';
+
+                    divItem.innerHTML = text;
+
+                    midLi.appendChild(divItem);
+                }
+            } else if (arr[i].type == 'select') {
+                var midLi = document.createElement('li'); // 创建li 
+                var text =
+                    '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+                    '<p class="mid-li-title">' +
+                    '<span class="m-title">' + arr[i].label + '</span>' +
+                    '<span class="mustfill">*</span>' +
+                    '</p>' +
+                    '<p class="mid-li-desc"></p>';
+                midLi.className = arr[i].className;
+                midLi.innerHTML = text;
+
+                midUl.appendChild(midLi);
+                for (var j = 0; j < arr[i].items.length; j++) {
+                    
+                    var divItem = document.createElement('div');// 创建div
+                    var text =
+                        '<input type="radio" name="">' +
+                        '<span class="item' + j + '">' + arr[i].items[j].value + '</span>';
+
+                    divItem.className = 'm-li-item';
+
+                    divItem.innerHTML = text;
+
+                    midLi.appendChild(divItem);
+                }
+
+
+            }
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

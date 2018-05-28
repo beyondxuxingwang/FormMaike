@@ -22,7 +22,6 @@ header{
     padding-top: 30px;
     box-sizing: border-box;
 }
-
 .w-item{
     float: left;
 }
@@ -70,6 +69,14 @@ header{
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
+    zoom: 1;
+}
+.l-ul:after{
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
 }
 .l-ul-li{
     float: left;
@@ -164,10 +171,25 @@ header{
     width: 70%;
     height: 30px;
 }
-
-
-
-
+.mid-company input {
+    width: 70%;
+    height: 30px;
+}
+.mid-datetime input {
+    width: 70%;
+    height: 30px;
+}
+.mid-email input{
+    width: 70%;
+    height: 30px;
+}
+.mid-phone input {
+    width: 70%;
+    height: 30px;
+}
+.mid-address input{
+    height: 30px;
+}
 
 /* 右侧参数 */
 .r-header {

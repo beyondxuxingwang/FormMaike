@@ -1,3 +1,10 @@
+/**
+ * 字符串拼接行程每个组件的不同样式
+ * 
+*/
+
+
+
 // 文本框 
 var wenben =
     '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
@@ -6,7 +13,7 @@ var wenben =
     '<span class="mustfill">*</span>' +
     '</p>' +
     '<p class="mid-li-desc"></p>' +
-    '<p class="mid-li-type" style="display:none"></p>' +
+    '<p class="mid-li-type" style="display:none">text</p>' +
     '<p class="mid-li-name" style="display:none"></p>' +
     '<p class="mid-li-disabled" style="display:none"></p>' +
     '<p class="mid-li-value" style="display:none"></p>' +
@@ -32,10 +39,7 @@ var wenben =
         '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
         '</div>' +
         // type
-        '<div class="r-list r-name">' +
-        '<p>type 类型 </p>' +
-        '<input name="mid-li-type" type="text"  placeholder="例如：text,number,email,url">' +
-        '</div>' +
+
         // name  
         '<div class="r-list r-name">' +
         '<p>name 属性 </p>' +
@@ -119,7 +123,7 @@ var wenben =
         // type
         '<div class="r-list r-name">' +
         '<p>type 类型 </p>' +
-        '<input name="mid-li-type" type="text"  placeholder="例如：text,number,email,url">' +
+        '<input name="mid-li-type" type="text"  placeholder="例如：radio或checkbox">' +
         '</div>' +
         // name  
         '<div class="r-list r-name">' +
@@ -185,7 +189,7 @@ var wenben =
         '<p class="mid-li-title"><span class="m-title">选择框</span><span class="mustfill">*</span></p>' +
         '<p class="mid-li-desc">这是下拉描述</p>' +
 
-        '<p class="mid-li-type" style="display:none"></p>' +
+        '<p class="mid-li-type" style="display:none">select</p>' +
         '<p class="mid-li-name" style="display:none"></p>' +
         '<p class="mid-li-disabled" style="display:none"></p>' +
         '<p class="mid-li-placeholder" style="display:none"></p>' +
@@ -274,9 +278,64 @@ var wenben =
     //时间日期框
     datetime =
         '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
-        '<p class="mid-li-title"><span>日期</span><span class="mustfill">*</span></p>' +
-        '<p class="mid-li-desc">这是下拉描述</p>' +
+        '<p class="mid-li-title"><span class="m-title">日期</span><span class="mustfill">*</span></p>' +
+        '<p class="mid-li-desc"></p>' +
+        '<p class="mid-li-type" style="display:none">datetime</p>' +
+        '<p class="mid-li-name" style="display:none"></p>' +
+        '<p class="mid-li-disabled" style="display:none"></p>' +
+        '<p class="mid-li-value" style="display:none"></p>' +
+        '<p class="mid-li-placeholder" style="display:none"></p>' +
+
+
         '<input type="date" disabled="disabled"> ',
+    datetimeEdit =
+        '<div class="r-title">' +
+        '<p class="r-title-p">文本框</p>' +
+        '</div>' +
+        '<div class="r-type">' +
+        '<p><span class="r-type-key">组件类型</span><span class="r-type-value">单行文本</span></p>' +
+        '</div>' +
+        // label 
+        '<div class="r-list r-name">' +
+        '<p>label 标题</p>' +
+        '<input name="m-title" type="text" >' +
+        '</div>' +
+        // desc  描述
+        '<div class="r-list r-name">' +
+        '<p>描述</p>' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
+        '</div>' +
+        // type
+
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // value
+        '<div class="r-list r-name">' +
+        '<p>value值</p>' +
+        '<input name="mid-li-value" type="text" >' +
+        '</div>' +
+        // disabled
+        '<div class="r-list r-name">' +
+        '<p>disabled 属性 </p>' +
+        '<input name="mid-li-disabled" type="text" >' +
+        '</div>' +
+
+        '<div class="r-list r-must">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
+        '<span>这是必填项</span>' +
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>外观样式</p>' +
+        '</div>',
+
+
+
+
+
+
 
     // 姓名 
     username =
@@ -480,56 +539,180 @@ var wenben =
         '<div class="m-li-item">' +
         '<input type="radio" disabled="disabled">' +
         '<span class="item2">女</span>' +
+        '</div>',
+    sexEdit =
+        '<div class="r-title">' +
+        '<p class="r-title-p">单选</p>' +
+        '</div>' +
+        '<div class="r-type">' +
+        '<p>' +
+        '<span class="r-type-key">组件类型</span>' +
+        '<span class="r-type-value">单选</span>' +
+        '</p>' +
+        '</div>' +
+
+        '<div class="r-list r-name">' +
+        '<p>描述</p>' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
+        '</div>' +
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // disabled
+        '<div class="r-list r-name">' +
+        '<p>disabled 属性 </p>' +
+        '<input name="mid-li-disabled" type="text" >' +
+        '</div>' +
+
+
+        '<div class="r-list r-must">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
+        '<span>这是必填项</span>' +
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>选项内容</p>' +
+        '<div class="r-list-list">' +
+        '<div class="r-list-item">' +
+        '<input type="radio" disabled="disabled">' +
+        '<input name="item1" type="text" placeholder="选项1">' +
+        '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
+        '</div>' +
+        '<div class="r-list-item">' +
+        '<input type="radio" disabled="disabled">' +
+        '<input name="item2" type="text" placeholder="选项2">' +
+        '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
+        '</div>' +
+
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>外观样式</p>' +
+        '</div>',
+    company =
+        '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+        '<p class="mid-li-title">' +
+        '<span class="m-title">公司</span>' +
+        '<span class="mustfill">*</span>' +
+        '</p>' +
+        '<p class="mid-li-desc"></p>' +
+        '<p class="mid-li-type" style="display:none">text</p>' +
+        '<p class="mid-li-name" style="display:none"></p>' +
+        '<p class="mid-li-disabled" style="display:none"></p>' +
+        '<p class="mid-li-value" style="display:none"></p>' +
+        '<p class="mid-li-placeholder" style="display:none"></p>' +
+        '<input  type="text" disabled="disabled">',
+    companyEdit =
+        '<div class="r-title">' +
+        '<p class="r-title-p">文本框</p>' +
+        '</div>' +
+        '<div class="r-type">' +
+        '<p><span class="r-type-key">组件类型</span><span class="r-type-value">单行文本</span></p>' +
+        '</div>' +
+
+        // desc  描述
+        '<div class="r-list r-name">' +
+        '<p>描述</p>' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
+        '</div>' +
+        // type
+
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // value
+        '<div class="r-list r-name">' +
+        '<p>value值</p>' +
+        '<input name="mid-li-value" type="text" >' +
+        '</div>' +
+        // disabled
+        '<div class="r-list r-name">' +
+        '<p>disabled 属性 </p>' +
+        '<input name="mid-li-disabled" type="text" >' +
+        '</div>' +
+        // placeholder 
+        '<div class="r-list r-name">' +
+        '<p>placeholder 属性 </p>' +
+        '<input name="mid-li-placeholder" type="text" >' +
+        '</div>' +
+        '<div class="r-list r-must">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
+        '<span>这是必填项</span>' +
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>外观样式</p>' +
+        '</div>',
+    address =
+        '<span class="mid-li-del fa  fa-times-circle-o fa-2x"></span>' +
+        '<p class="mid-li-title">' +
+        // 标题label
+        '<span class="m-title">地址</span>' +
+        '<span class="mustfill">*</span>' +
+        '</p>' +
+        '<p class="mid-li-desc"></p>' + // 描述
+        '<p class="mid-li-type" style="display:none">text</p>' + //类型
+        '<p class="mid-li-name" style="display:none"></p>' +    //name属性
+        '<p class="mid-li-disabled" style="display:none"></p>' + // disabled 属性
+        '<p class="mid-li-value" style="display:none"></p>' +    // value 值
+        '<p class="mid-li-placeholder" style="display:none"></p>' + // placeholder 
+        '<input  type="text" disabled="disabled" value="中国">' + 
+        '<input  type="text" disabled="disabled" value="请选择"> ',
+    addressEdit =
+        '<div class="r-title">' +
+        '<p class="r-title-p">地址</p>' +
+        '</div>' +
+        '<div class="r-type">' +
+        '<p><span class="r-type-key">组件类型</span><span class="r-type-value">单行文本</span></p>' +
+        '</div>' +
+        //lable 标题
+        '<div class="r-list r-name">' +
+        '<p>lable</p>' +
+        '<input name="mid-li-title" type="text" placeholder="地址">' +
+        '</div>' +
+        // desc  描述
+        '<div class="r-list r-name">' +
+        '<p>描述</p>' +
+        '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
+        '</div>' +
+     
+        // name  
+        '<div class="r-list r-name">' +
+        '<p>name 属性 </p>' +
+        '<input name="mid-li-name" type="text" >' +
+        '</div>' +
+        // value限定国家
+        '<div class="r-list r-name">' +
+        '<p>限定国家</p>' +
+        '<input name="mid-li-value" type="text" value="中国">' +
+        '</div>' +
+        //最小层级
+     
+        // // disabled
+        // '<div class="r-list r-name">' +
+        // '<p>disabled 属性 </p>' +
+        // '<input name="mid-li-disabled" type="text" >' +
+        // '</div>' +
+        // placeholder 
+        // '<div class="r-list r-name">' +
+        // '<p>placeholder 属性 </p>' +
+        // '<input name="mid-li-placeholder" type="text" >' +
+        // '</div>' +
+        // 必填
+        '<div class="r-list r-must">' +
+        '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
+        '<span>这是必填项</span>' +
+        '</div>' +
+        '<div class="r-list">' +
+        '<p>外观样式</p>' +
         '</div>'
-sexEdit =
-    '<div class="r-title">' +
-    '<p class="r-title-p">单选</p>' +
-    '</div>' +
-    '<div class="r-type">' +
-    '<p>' +
-    '<span class="r-type-key">组件类型</span>' +
-    '<span class="r-type-value">单选</span>' +
-    '</p>' +
-    '</div>' +
-
-    '<div class="r-list r-name">' +
-    '<p>描述</p>' +
-    '<input name="mid-li-desc" type="text" placeholder="这是描述">' +
-    '</div>' +
-    // name  
-    '<div class="r-list r-name">' +
-    '<p>name 属性 </p>' +
-    '<input name="mid-li-name" type="text" >' +
-    '</div>' +
-    // disabled
-    '<div class="r-list r-name">' +
-    '<p>disabled 属性 </p>' +
-    '<input name="mid-li-disabled" type="text" >' +
-    '</div>' +
 
 
-    '<div class="r-list r-must">' +
-    '<input name="mustfill" type="checkbox" value="0" onclick="this.value=(this.value==0)?1:0" >' +
-    '<span>这是必填项</span>' +
-    '</div>' +
-    '<div class="r-list">' +
-    '<p>选项内容</p>' +
-    '<div class="r-list-list">' +
-    '<div class="r-list-item">' +
-    '<input type="radio" disabled="disabled">' +
-    '<input name="item1" type="text" placeholder="选项1">' +
-    '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
-    '</div>' +
-    '<div class="r-list-item">' +
-    '<input type="radio" disabled="disabled">' +
-    '<input name="item2" type="text" placeholder="选项2">' +
-    '<span class="r-list-del fa  fa-times-circle-o fa-2x"></span>' +
-    '</div>' +
 
-    '</div>' +
-    '<div class="r-list">' +
-    '<p>外观样式</p>' +
-    '</div>';
+
+
+
 
 
 

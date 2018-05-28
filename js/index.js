@@ -22,6 +22,7 @@
                 }
             }
         },
+        //点击组件按钮
         appendMidLiDom: function (dataId) {
             // 等于1 是文本框
             if (dataId == '1') {
@@ -50,7 +51,7 @@
                 this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
             } else if (dataId == '4') {
                 this.midLi = document.createElement('li');
-                this.midLi.className = "mid-li mid-time";
+                this.midLi.className = "mid-li mid-datetime";
                 this.midLi.setAttribute('data-id', dataId);
                 this.midLi.innerHTML = datetime;
                 this.midUl.appendChild(this.midLi);
@@ -90,6 +91,23 @@
                 this.midUl.appendChild(this.midLi);
                 this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
                 this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+            }else if(dataId == '9'){
+                this.midLi = document.createElement('li');
+                this.midLi.className = "mid-li mid-company";
+                this.midLi.setAttribute('data-id', dataId);
+                this.midLi.innerHTML = company;
+                this.midUl.appendChild(this.midLi);
+                this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
+                this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+            }else if(dataId == '10'){
+                this.midLi = document.createElement('li');
+                this.midLi.className = "mid-li mid-address";
+                this.midLi.setAttribute('data-id', dataId);
+                this.midLi.innerHTML = address;
+                this.midUl.appendChild(this.midLi);
+                this.midLiList = document.querySelectorAll('.mid-li');// 获取中间表单li
+                this.midLiDel = document.querySelectorAll('.mid-li-del');// 获取每个li上的del按钮
+               
             }
             this.appendStyle();
 
@@ -149,15 +167,19 @@
             } else if (dataId == '3') {
                 this.rightTab.innerHTML = downpullEdit;
             } else if (dataId == '4') {
-                this.rightTab.innerHTML = wenbenEdit;
+                this.rightTab.innerHTML = datetimeEdit;
             }else if(dataId == '5'){
-                this.rightTab.innerHTML = usernameEdit;
+                this.rightTab.innerHTML = datetimeEdit;
             }else if(dataId == '6'){
                 this.rightTab.innerHTML = phoneEdit;
             }else if(dataId == '7'){
                 this.rightTab.innerHTML = emailEdit;
             }else if(dataId == '8'){
                 this.rightTab.innerHTML = sexEdit;
+            }else if(dataId =='9'){
+                this.rightTab.innerHTML = companyEdit;
+            }else if(dataId =='10'){
+                this.rightTab.innerHTML = addressEdit;
             }
             this.rightEdit(dataId, dataNum);
         },
@@ -215,8 +237,6 @@
                     }else if(dataId == 3){ // 下拉框
                         console.log(dataId);
                         
-                        // this.midItemDom = document.createElement('option');
-                        // this.midItemDom.className = 'item'+itemId;  
                         this.myselect = _this.MidInputDom.querySelector('select');   
 
                         this.myselect.options[this.myselect.options.length] = new Option("text","value");  
@@ -226,11 +246,8 @@
                         for(var i = 0 ;i<this.myoptions.length;i++){
                             var j=i+1;
                             this.myoptions[i].className = 'm-li-item item'+j;
-                        }
-                           
+                        }      
                     }
-                   
-
                     _this.ChooseItemMouseover(dataId, dataNum);
                 }
             }
@@ -260,7 +277,6 @@
                         this.parentNode.remove();
                         _this.mLiItem[i].remove();
                     }
-          
             }
         },
 

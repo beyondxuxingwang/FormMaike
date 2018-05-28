@@ -23,14 +23,17 @@
                     <li class="l-ul-li" data-id="2">选择</li>
                     <li class="l-ul-li" data-id="3">下拉</li>
                     <li class="l-ul-li" data-id="4">日期时间</li>
-
-
                     <li class="l-ul-li" data-id="5">姓名</li>
                     <li class="l-ul-li" data-id="6">手机</li>
                     <li class="l-ul-li" data-id="7">邮箱</li>
                     <li class="l-ul-li" data-id="8">性别</li>
-
+                    <li class="l-ul-li" data-id="9">公司</li>
                 </ul>
+                <ul class="l-ul" style="border-top: 3px solid #267DC5; padding-top: 10px; ">
+                    <h4 style="color:forestgreen">添加组件</h4>
+                    <li class="l-ul-li" data-id="10">地址</li>
+                </ul>
+                
             </div>
         </div>
         <!-- 中间表单栏 -->
@@ -70,29 +73,33 @@
     </div>
     <script src="js/temp.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="plugin/jquery.min.js"></script>
     <script>
 
         var FormMake = new FormMake({});
-        // FormMake.show();
+        // 提交
         document.getElementById('formBtn').onclick = function () {
-
+            // 存放数据
             var arr = [];
 
             // 获取中间表单所有的Li 标签
-
+            // 遍历每个li获取其中的数据存储到每个对象中
             $('.mid-li').each(function (i) {
+
                 var obj = {};
-                
+                // 想要获取什么属性，手动添加什么属性
+                obj.className = $(this).attr('class');
                 obj.label = $(this).find('.m-title').html(); // 获取标题
                 obj.type = $(this).find('.mid-li-type').html();// 获取类型
                 obj.name = $(this).find('.mid-li-name').html();// 获取name
                 obj.required = $(this).find('.mid-li-required').html();// required
+                
+                
 
                 var item = [];
                 // 单选框,多选框 以及下拉框
                 if ($(this).attr("data-id") == 2 || $(this).attr("data-id") == 8) {
-                    $('.m-li-item span').each(function () {
+                   $(this).find('.m-li-item span').each(function () {
                         var itemObj = {};
                         itemObj.value = $(this).html();
 
@@ -122,6 +129,7 @@
 
 
             console.log(arr);
+            
 
 
 
